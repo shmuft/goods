@@ -477,7 +477,7 @@ void good_input::on_pushButton_11_clicked(){
             ui->tableView->hideRow(i);
         }
     }
-    }
+    } else   QMessageBox::warning(0,"Шк не найден", "Штрих-Код " + find + " Не найден" );
 
     find.clear();
     findId.clear();

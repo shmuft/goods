@@ -480,8 +480,13 @@ void good_input::on_pushButton_11_clicked(){
 void good_input::on_resetFind_clicked(){
     ui->lineEdit->clear();
     ui->lineEdit->setFocus();
-    for (int i=0; i<ui->tableView->model()->rowCount();i++)    {
+    int i;
+    for (i=0; i<ui->tableView->model()->rowCount();i++)    {
         //  qDebug() << i;
         ui->tableView->showRow(i);
     }
+
+
+        ui->tableView->scrollTo(ui->tableView->model()->index( i-1,1));
+
 }

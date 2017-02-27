@@ -1,8 +1,5 @@
 #include "goods_card.h"
 #include "ui_goods_card.h"
-
-
-
 QSqlTableModel *model;
 QSqlTableModel *barcode_model;
 QSqlTableModel *egais_model;

@@ -5,7 +5,13 @@ good_input::good_input(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::good_input){
     ui->setupUi(this);
-    dbase.setDatabaseName("main.db");
+    QSettings *settings = new QSettings("settings.conf",QSettings::IniFormat);
+  // settings->setValue("main/version","0.1.1");  //устанавливаем значение value=1
+//    settings->setValue("database/path","main.db");
+    //settings->sync(); //записываем настройки
+
+
+    dbase.setDatabaseName(settings->value("database/path").toString());
     if (!dbase.open()) {
         QMessageBox::warning(0,"Проблемы с БД", dbase.lastError().text());
     }

@@ -14,6 +14,7 @@
 #include "QSqlError"
 #include "QMessageBox"
 #include "QTextStream"
+#include "QSettings"
 
 namespace Ui {
 class good_input;

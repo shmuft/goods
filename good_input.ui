@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>695</width>
-    <height>353</height>
+    <width>671</width>
+    <height>279</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,6 +62,9 @@
    </item>
    <item row="1" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetFixedSize</enum>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="spacing">
@@ -178,7 +181,7 @@
    <item row="0" column="0">
     <widget class="QTableView" name="tableView">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>

@@ -51,7 +51,7 @@ public:
     {
         if (good_input->objectName().isEmpty())
             good_input->setObjectName(QStringLiteral("good_input"));
-        good_input->resize(695, 353);
+        good_input->resize(671, 279);
         gridLayout = new QGridLayout(good_input);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         verticalLayout = new QVBoxLayout();
@@ -86,6 +86,7 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -162,7 +163,7 @@ public:
 
         tableView = new QTableView(good_input);
         tableView->setObjectName(QStringLiteral("tableView"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());

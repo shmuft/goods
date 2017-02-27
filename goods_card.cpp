@@ -1,16 +1,7 @@
 #include "goods_card.h"
 #include "ui_goods_card.h"
-#include "QSqlTableModel"
-#include "QSqlQueryModel"
-#include "QSqlTableModel"
-#include "QSqlError"
-#include "QDebug"
-#include "QSqlQuery"
-#include "egais.h"
-#include <QInputDialog>
-#include <QMessageBox>
-#include <QCheckBox>
-#include <QStandardItem>
+
+
 
 QSqlTableModel *model;
 QSqlTableModel *barcode_model;

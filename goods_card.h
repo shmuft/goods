@@ -1,8 +1,19 @@
 #ifndef GOODS_CARD_H
 #define GOODS_CARD_H
-
+#include "egais.h"
 #include <QWidget>
 #include <QKeyEvent>
+#include "QSqlTableModel"
+#include "QSqlQueryModel"
+#include "QSqlTableModel"
+#include "QSqlError"
+#include "QDebug"
+#include "QSqlQuery"
+
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QCheckBox>
+#include <QStandardItem>
 
 namespace Ui {
 class goods_card;

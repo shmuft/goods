@@ -3,6 +3,17 @@
 
 #include <QWidget>
 #include <QSqlDatabase>
+#include "QSqlQueryModel"
+#include "QSqlTableModel"
+#include "QSqlQuery"
+#include "QDebug"
+#include "QKeyEvent"
+#include "egais.h"
+#include "QFileDialog"
+#include "QXmlStreamReader"
+#include "QSqlError"
+#include "QMessageBox"
+#include "QTextStream"
 
 namespace Ui {
 class good_input;

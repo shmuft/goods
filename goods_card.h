@@ -9,7 +9,6 @@
 #include "QSqlError"
 #include "QDebug"
 #include "QSqlQuery"
-
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QCheckBox>

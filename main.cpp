@@ -7,6 +7,7 @@
 #include <egais.h>
 
 int main(int argc, char *argv[]){
+//firs commit
     QApplication a(argc, argv);
     good_input goods;
     goods.show();

@@ -1,16 +1,6 @@
 #include "good_input.h"
 #include "ui_good_input.h"
-#include "QSqlQueryModel"
-#include "QSqlTableModel"
-#include "QSqlQuery"
-#include "QDebug"
-#include "QKeyEvent"
-#include "egais.h"
-#include "QFileDialog"
-#include "QXmlStreamReader"
-#include "QSqlError"
-#include "QMessageBox"
-#include "QTextStream"
+
 
 good_input::good_input(QWidget *parent) :
     QWidget(parent),

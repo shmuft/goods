@@ -1,7 +1,6 @@
 #include "good_input.h"
 #include "ui_good_input.h"
 
-
 good_input::good_input(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::good_input){
@@ -34,7 +33,7 @@ void good_input::load_data(){
     model->setHeaderData(6, Qt::Horizontal, tr("Код"));
     model->setHeaderData(7, Qt::Horizontal, tr("Группа \n печати"));
     model->setHeaderData(8, Qt::Horizontal, tr("Обьем"));
-    ui->tableView->resizeRowsToContents();
+  //  ui->tableView->resizeRowsToContents();
     //ui->tableView->resizeRowsToContents(1);
     for (int i = 2 ; i <=8; i++){
         ui->tableView->resizeColumnToContents(i);

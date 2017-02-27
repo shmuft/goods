@@ -4,7 +4,7 @@
 //#include <QMessageBox>
 #include <good_input.h>
 #include <goods_card.h>
-#include <egais.h>
+//#include <egais.h>
 
 int main(int argc, char *argv[]){
 //firs commit

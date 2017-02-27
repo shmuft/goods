@@ -1,8 +1,6 @@
 #include "egais.h"
-//#include <QTextCodec>
 
 egais::egais(QObject *parent) : QObject(parent) {
- //   QTextCodec::setCodecForLocale(QTextCodec::codecForName("Windows-1251"));
 }
 
 QString egais::getalcocode( QString axcise_mark){
@@ -15,5 +13,3 @@ QString egais::getalcocode( QString axcise_mark){
     }
     return alcocode;
 }
-
-

@@ -72,7 +72,6 @@ void goods_card::get_goods_card(QString id){
     for (int i = 2 ; i <ui->egais_goods->colorCount(); i++){
         ui->egais_goods->resizeColumnToContents(i);
     }
-
 }
 void goods_card::new_goods_card(QString id){
     get_goods_card(id);
@@ -118,7 +117,6 @@ void goods_card::on_pushButton_3_clicked(){
     }
     emit update();
 }
-
 void goods_card::on_add_barcode_clicked(){
     bool ok;
     //игнорировать ввод подумать как подумать что если есть не сохраненные то может и их как то проверять
@@ -203,7 +201,6 @@ void goods_card::on_goods_card_destroyed(){
 void goods_card::on_cancel_clicked(){
     close();
 }
-
 void goods_card::on_pushButton_clicked(){
     on_pushButton_3_clicked();
     close();

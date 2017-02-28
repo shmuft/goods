@@ -7,7 +7,7 @@
 //#include <egais.h>
 
 int main(int argc, char *argv[]){
-//firs commit
+//fork 28 02 2017
     QApplication a(argc, argv);
     good_input goods;
     goods.show();

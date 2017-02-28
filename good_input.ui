@@ -95,7 +95,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Сброс поиска</string>
+          <string>Отменить поиск</string>
          </property>
         </widget>
        </item>

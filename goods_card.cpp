@@ -162,16 +162,20 @@ void goods_card::on_addEgaisGood_clicked(){
         if (find_egais_good.value(0).toString()=="") {
             QMessageBox::warning(0,"Ошибка товара ЕГАИС", "Данный Товар не содержится в базе " + alcocode);
         } else {
-            QSqlQuery find_goods_id("select good_id from tovar_egais where AlcCode="+alcocode);
+            QSqlQuery find_goods_id("select good_id, FullName from tovar_egais where AlcCode="+alcocode);
             find_goods_id.next();
             if (find_goods_id.value(0).toString()!="") {
                 QMessageBox::warning(0,"Ошибка товара ЕГС", "Данный Товар уже использован с другой нуменклатурой");
             }   else {
+                //
                 egais_model->setFilter("AlcCode="+alcocode);
                 QModelIndex index = model->index(0, 0);
                 qDebug() << "current good ID " << index.data(Qt::DisplayRole).toString();
                 int row=egais_model->rowCount();
                 egais_model->setData(egais_model->index(row-1, 10), index.data(Qt::DisplayRole).toInt());
+                ui->goods_edit->setText(find_egais_good.value(1).toString());
+                ui->alcohol->setChecked(true);
+                ui->excise->setChecked(true);
             }
         }
     }

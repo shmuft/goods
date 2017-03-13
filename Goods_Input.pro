@@ -15,13 +15,16 @@ VERSION = 0.0.1
 SOURCES += main.cpp\
     egais.cpp \
     good_input.cpp \
-    goods_card.cpp
+    goods_card.cpp \
+    setting.cpp
 
 HEADERS  += \
     egais.h \
     good_input.h \
-    goods_card.h
+    goods_card.h \
+    setting.h
 
 FORMS    += \
     good_input.ui \
-    goods_card.ui
+    goods_card.ui \
+    setting.ui

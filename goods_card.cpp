@@ -116,6 +116,7 @@ void goods_card::on_pushButton_3_clicked(){
 }
 void goods_card::on_add_barcode_clicked(){
     bool ok;
+    on_pushButton_3_clicked();
     //игнорировать ввод подумать как подумать что если есть не сохраненные то может и их как то проверять
     QString text = QInputDialog::getText(this, tr("Штрих код товара"),
                                          tr("Отсканируйте штрих код"), QLineEdit::Normal, tr(" "), &ok);
@@ -150,6 +151,7 @@ void goods_card::on_del_barcode_clicked(){
 void goods_card::on_addEgaisGood_clicked(){
     egais new_egais;
     bool ok;
+    on_pushButton_3_clicked();
     //игнорировать ввод
     QString text = QInputDialog::getText(this, tr("Акцизный товар марка"),
                                          tr("Отсканируйте акцизную марку"), QLineEdit::Normal, tr(" "), &ok);

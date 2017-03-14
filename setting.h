@@ -15,6 +15,11 @@ public:
     explicit setting(QWidget *parent = 0);
     ~setting();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::setting *ui;
 };

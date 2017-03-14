@@ -490,3 +490,8 @@ void good_input::on_resetFind_clicked(){
         ui->tableView->scrollTo(ui->tableView->model()->index( i-1,1));
 
 }
+
+void good_input::on_settings_clicked()
+{
+    emit showSetting();
+}

@@ -30,6 +30,7 @@ signals:
     void double_click(QString id);
     void new_good(QString id);
     void show_card();
+    void showSetting();
 private slots:
     void on_pushButton_clicked();
  //   void on_tableView_clicked(const QModelIndex &index);
@@ -42,6 +43,8 @@ private slots:
     void on_pushButton_10_clicked();
     void on_pushButton_11_clicked();
     void on_resetFind_clicked();
+
+    void on_settings_clicked();
 
 public slots:
     void load_data();

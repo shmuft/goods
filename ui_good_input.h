@@ -46,6 +46,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton;
     QPushButton *pushButton_4;
+    QPushButton *settings;
 
     void setupUi(QWidget *good_input)
     {
@@ -168,6 +169,13 @@ public:
 
         horizontalLayout_2->addWidget(pushButton_4);
 
+        settings = new QPushButton(good_input);
+        settings->setObjectName(QStringLiteral("settings"));
+        sizePolicy1.setHeightForWidth(settings->sizePolicy().hasHeightForWidth());
+        settings->setSizePolicy(sizePolicy1);
+
+        horizontalLayout_2->addWidget(settings);
+
 
         gridLayout->addLayout(horizontalLayout_2, 0, 0, 1, 1);
 
@@ -190,6 +198,7 @@ public:
         pushButton_3->setText(QApplication::translate("good_input", "\320\276\320\261\320\275\320\276\320\262\320\270\321\202\321\214", Q_NULLPTR));
         pushButton->setText(QApplication::translate("good_input", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("good_input", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", Q_NULLPTR));
+        settings->setText(QApplication::translate("good_input", "\320\235\320\260\321\201\321\202\321\200\320\276\320\271\320\272\320\270", Q_NULLPTR));
     } // retranslateUi
 
 };

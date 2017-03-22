@@ -371,6 +371,24 @@
          </item>
         </layout>
        </item>
+       <item>
+        <widget class="QTreeWidget" name="goodsGroup">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="columnCount">
+          <number>1</number>
+         </property>
+         <column>
+          <property name="text">
+           <string>Товарная Группа</string>
+          </property>
+         </column>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>

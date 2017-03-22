@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -64,6 +65,7 @@ public:
     QVBoxLayout *verticalLayout_8;
     QCheckBox *excise;
     QCheckBox *alcohol;
+    QTreeWidget *goodsGroup;
     QLabel *label_5;
     QPushButton *pushButton;
 
@@ -296,6 +298,17 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_8);
 
+        goodsGroup = new QTreeWidget(goods_card);
+        goodsGroup->setObjectName(QStringLiteral("goodsGroup"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(goodsGroup->sizePolicy().hasHeightForWidth());
+        goodsGroup->setSizePolicy(sizePolicy1);
+        goodsGroup->setColumnCount(1);
+
+        horizontalLayout_3->addWidget(goodsGroup);
+
 
         verticalLayout_9->addLayout(horizontalLayout_3);
 
@@ -346,6 +359,8 @@ public:
         label_7->setText(QApplication::translate("goods_card", "\320\236\320\261\321\214\320\265\320\274", Q_NULLPTR));
         excise->setText(QApplication::translate("goods_card", "\320\220\320\272\321\206\320\270\320\267\320\275\321\213\320\271", Q_NULLPTR));
         alcohol->setText(QApplication::translate("goods_card", "\320\220\320\273\320\272\320\276\320\263\320\276\320\273\321\214\320\275\321\213\320\271", Q_NULLPTR));
+        QTreeWidgetItem *___qtreewidgetitem = goodsGroup->headerItem();
+        ___qtreewidgetitem->setText(0, QApplication::translate("goods_card", "\320\242\320\276\320\262\320\260\321\200\320\275\320\260\321\217 \320\223\321\200\321\203\320\277\320\277\320\260", Q_NULLPTR));
         label_5->setText(QApplication::translate("goods_card", "<html><head/><body><p>\320\235\320\260\320\266\320\274\320\270\321\202\320\265 \320\272\320\275\320\276\320\277\320\272\321\203 \320\264\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \321\202\320\276\320\262\320\260\321\200, </p><p>\320\236\321\201\320\272\320\260\320\275\320\270\321\200\321\203\320\271\321\202\320\265 \320\260\320\272\321\206\320\270\320\267\320\275\321\203\321\216 \320\274\320\260\321\200\320\272\321\203, </p><p>\320\237\321\200\320\270\320\262\321\217\320\266\320\270\321\202\320\265 \321\202\320\276\320\262\320\260\321\200 \320\265\320\263\320\260\320\270\321\201</p></body></html>", Q_NULLPTR));
         pushButton->setText(QApplication::translate("goods_card", "\320\236\320\232", Q_NULLPTR));
     } // retranslateUi

@@ -1,9 +1,12 @@
 #include "good_input.h"
 #include "ui_good_input.h"
+#include "intabstractlistmodel.h"
+#include "treemodel.h"
 
 good_input::good_input(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::good_input){
+
     ui->setupUi(this);
     QSettings *settings = new QSettings("settings.conf",QSettings::IniFormat);
   // settings->setValue("main/version","0.1.1");  //устанавливаем значение value=1
@@ -17,6 +20,17 @@ good_input::good_input(QWidget *parent) :
     }
     load_data();
     ui->tableView->setFocus();
+
+  //  QList<int> modelList;
+  //  modelList << 123 << 231 << 5756 << 678 <<7689;
+
+    //без кучи не работает, в конструктор передаем список элементов
+    QFile file(":/default.txt");
+    file.open(QIODevice::ReadOnly);
+  //  TreeModel model(file.readAll());  IntAbstractListModel *modelll= new IntAbstractListModel(modelList);
+
+
+    ui->lineEdit->show();
 }
 good_input::~good_input(){
     delete ui;
@@ -27,6 +41,7 @@ void good_input::load_data(){
     model->setTable("goods");
     model->select();
     ui->tableView->setModel(model);
+
     for (int i=0; i<30; i++){
         ui->tableView->scrollTo(ui->tableView->model()->index( ui->tableView->model()->rowCount()-1,1));
     }

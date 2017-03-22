@@ -29,7 +29,6 @@ class Ui_good_input
 {
 public:
     QGridLayout *gridLayout;
-    QTableView *tableView;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_3;
@@ -47,6 +46,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_4;
     QPushButton *settings;
+    QTableView *tableView;
 
     void setupUi(QWidget *good_input)
     {
@@ -55,16 +55,6 @@ public:
         good_input->resize(671, 279);
         gridLayout = new QGridLayout(good_input);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        tableView = new QTableView(good_input);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
-        tableView->setSizePolicy(sizePolicy);
-
-        gridLayout->addWidget(tableView, 1, 0, 1, 1);
-
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
@@ -84,32 +74,32 @@ public:
 
         pushButton_11 = new QPushButton(good_input);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
-        pushButton_11->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
+        pushButton_11->setSizePolicy(sizePolicy);
 
         horizontalLayout_3->addWidget(pushButton_11);
 
         pushButton_9 = new QPushButton(good_input);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        sizePolicy1.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
+        pushButton_9->setSizePolicy(sizePolicy);
 
         horizontalLayout_3->addWidget(pushButton_9);
 
         pushButton_10 = new QPushButton(good_input);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        sizePolicy1.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
-        pushButton_10->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
+        pushButton_10->setSizePolicy(sizePolicy);
 
         horizontalLayout_3->addWidget(pushButton_10);
 
         resetFind = new QPushButton(good_input);
         resetFind->setObjectName(QStringLiteral("resetFind"));
-        sizePolicy1.setHeightForWidth(resetFind->sizePolicy().hasHeightForWidth());
-        resetFind->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(resetFind->sizePolicy().hasHeightForWidth());
+        resetFind->setSizePolicy(sizePolicy);
 
         horizontalLayout_3->addWidget(resetFind);
 
@@ -127,15 +117,15 @@ public:
 
         selectfile = new QPushButton(good_input);
         selectfile->setObjectName(QStringLiteral("selectfile"));
-        sizePolicy1.setHeightForWidth(selectfile->sizePolicy().hasHeightForWidth());
-        selectfile->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(selectfile->sizePolicy().hasHeightForWidth());
+        selectfile->setSizePolicy(sizePolicy);
 
         horizontalLayout->addWidget(selectfile);
 
         load = new QPushButton(good_input);
         load->setObjectName(QStringLiteral("load"));
-        sizePolicy1.setHeightForWidth(load->sizePolicy().hasHeightForWidth());
-        load->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(load->sizePolicy().hasHeightForWidth());
+        load->setSizePolicy(sizePolicy);
 
         horizontalLayout->addWidget(load);
 
@@ -150,34 +140,44 @@ public:
         horizontalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
         pushButton_3 = new QPushButton(good_input);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
 
         horizontalLayout_2->addWidget(pushButton_3);
 
         pushButton = new QPushButton(good_input);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
 
         horizontalLayout_2->addWidget(pushButton);
 
         pushButton_4 = new QPushButton(good_input);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy);
 
         horizontalLayout_2->addWidget(pushButton_4);
 
         settings = new QPushButton(good_input);
         settings->setObjectName(QStringLiteral("settings"));
-        sizePolicy1.setHeightForWidth(settings->sizePolicy().hasHeightForWidth());
-        settings->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(settings->sizePolicy().hasHeightForWidth());
+        settings->setSizePolicy(sizePolicy);
 
         horizontalLayout_2->addWidget(settings);
 
 
         gridLayout->addLayout(horizontalLayout_2, 0, 0, 1, 1);
+
+        tableView = new QTableView(good_input);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
+        tableView->setSizePolicy(sizePolicy1);
+
+        gridLayout->addWidget(tableView, 1, 0, 1, 1);
 
 
         retranslateUi(good_input);

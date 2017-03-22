@@ -16,13 +16,20 @@ SOURCES += main.cpp\
     egais.cpp \
     good_input.cpp \
     goods_card.cpp \
-    setting.cpp
+    setting.cpp \
+    intabstractlistmodel.cpp \
+    treeitem.cpp \
+    treemodel.cpp
 
 HEADERS  += \
     egais.h \
     good_input.h \
     goods_card.h \
-    setting.h
+    setting.h \
+    intabstractlistmodel.h \
+    intabstractlistmodel_копия.h \
+    treeitem.h \
+    treemodel.h
 
 FORMS    += \
     good_input.ui \

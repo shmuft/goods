@@ -1,21 +1,26 @@
 #include "goods_card.h"
 #include "ui_goods_card.h"
+
+
+
 QSqlTableModel *model;
 QSqlTableModel *barcode_model;
 QSqlTableModel *egais_model;
+QTextStream cout(stdout);
 
 goods_card::goods_card(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::goods_card){
     ui->setupUi(this);
+     addTreeWidget();
 }
-
 goods_card::~goods_card(){
     delete ui;
 }
 //Строим модель по текущей карте
 void goods_card::get_goods_card(QString id){
     model = new QSqlTableModel;
+
     // дербаним goods
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
     model->setTable("goods");
@@ -116,6 +121,7 @@ void goods_card::on_pushButton_3_clicked(){
 }
 void goods_card::on_add_barcode_clicked(){
     bool ok;
+    on_pushButton_3_clicked();
     //игнорировать ввод подумать как подумать что если есть не сохраненные то может и их как то проверять
     QString text = QInputDialog::getText(this, tr("Штрих код товара"),
                                          tr("Отсканируйте штрих код"), QLineEdit::Normal, tr(" "), &ok);
@@ -150,6 +156,7 @@ void goods_card::on_del_barcode_clicked(){
 void goods_card::on_addEgaisGood_clicked(){
     egais new_egais;
     bool ok;
+    on_pushButton_3_clicked();
     //игнорировать ввод
     QString text = QInputDialog::getText(this, tr("Акцизный товар марка"),
                                          tr("Отсканируйте акцизную марку"), QLineEdit::Normal, tr(" "), &ok);
@@ -162,16 +169,20 @@ void goods_card::on_addEgaisGood_clicked(){
         if (find_egais_good.value(0).toString()=="") {
             QMessageBox::warning(0,"Ошибка товара ЕГАИС", "Данный Товар не содержится в базе " + alcocode);
         } else {
-            QSqlQuery find_goods_id("select good_id from tovar_egais where AlcCode="+alcocode);
+            QSqlQuery find_goods_id("select good_id, FullName from tovar_egais where AlcCode="+alcocode);
             find_goods_id.next();
             if (find_goods_id.value(0).toString()!="") {
                 QMessageBox::warning(0,"Ошибка товара ЕГС", "Данный Товар уже использован с другой нуменклатурой");
             }   else {
+                //
                 egais_model->setFilter("AlcCode="+alcocode);
                 QModelIndex index = model->index(0, 0);
                 qDebug() << "current good ID " << index.data(Qt::DisplayRole).toString();
                 int row=egais_model->rowCount();
                 egais_model->setData(egais_model->index(row-1, 10), index.data(Qt::DisplayRole).toInt());
+                ui->goods_edit->setText(find_egais_good.value(1).toString());
+                ui->alcohol->setChecked(true);
+                ui->excise->setChecked(true);
             }
         }
     }
@@ -202,3 +213,83 @@ void goods_card::on_pushButton_clicked(){
     on_pushButton_3_clicked();
     close();
 }
+void goods_card::addTreeWidget(){
+    QList<QTreeWidgetItem*>item_list;
+
+
+
+
+    QSqlQuery query;
+    QList<QStringList> groupList;
+    query.prepare("select id, group_name, parent_id from goods_group");
+    query.exec();
+    while(query.next()){
+        QStringList row;
+        //format id group_name parent_id
+        for (int i=0; i<3; i++){
+         //   cout << query.value(i).toString();
+            row << query.value(i).toString();
+        }
+        groupList << row;
+    }
+    //qDebug() << groupList;
+
+    for (int i=0; i< groupList.length();i++){
+        QTreeWidgetItem * tree_item = new QTreeWidgetItem();
+
+        QStringList row;
+        row = groupList[i];
+        //ищем корни
+        if (row[2]=="0"&&row[0]!="0") {
+            tree_item->setText(0,row[1]);
+            row[1]="0";
+            groupList[i]=row;
+         //    groupList.removeAt(0);
+           // item_list.append(tree_item);
+
+            for (int j=0; j< groupList.length();j++){
+                 QTreeWidgetItem * child_item = new QTreeWidgetItem();
+                QStringList childRow;
+                childRow=groupList[j];
+                cout << "chil " <<  childRow[2] <<" par " << row[0] << "\n";
+                if (childRow[2]==row[0]&&childRow[1]!="0"){
+                   //  cout << childRow[1];
+
+                    child_item->setText(0,childRow[1]);
+                    childRow[1]="0";
+                    groupList[j]=childRow;
+                    // groupList.removeAt(0);
+                    tree_item->addChild(child_item);
+                }
+
+
+
+
+
+
+            }
+
+
+             ui->goodsGroup->addTopLevelItem(tree_item);
+        }
+
+       //  ui->goodsGroup->addTopLevelItems(item_list);
+    }
+
+    /*
+     while(queryChild.next())
+     {
+        QTreeWidgetItem * child_item = new QTreeWidgetItem();
+
+        child_item->setText(0,queryChild.value(1).toString());
+        cout << "child_item" << queryChild.value(1).toString();
+        item_list.append(child_item);
+        tree_item->addChild(child_item);
+
+     }
+     */
+    //     item_list.append(tree_item);
+    //  ui->goodsGroup->addTopLevelItems(item_list);
+
+}
+

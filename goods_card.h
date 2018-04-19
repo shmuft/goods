@@ -43,7 +43,7 @@ private slots:
     void on_removeEgais_clicked();
     void on_goods_card_destroyed();
     void on_cancel_clicked();
-
+    void addTreeWidget();
     void on_pushButton_clicked();
 
 protected:
